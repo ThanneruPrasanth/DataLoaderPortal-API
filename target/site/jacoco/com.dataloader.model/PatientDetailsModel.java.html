@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientDetailsModel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-jwt</a> &gt; <a href="index.source.html" class="el_package">com.dataloader.model</a> &gt; <span class="el_source">PatientDetailsModel.java</span></div><h1>PatientDetailsModel.java</h1><pre class="source lang-java linenums">package com.dataloader.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class PatientDetailsModel {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int patientId;
+	private String patientName;
+	private String patientAddress;
+	private String patientDateOfBirth;
+	private String patientEmail;
+	private String patientContactNumber;
+	private double patientDrugId;
+	private String patientDrugName;
+	public int getPatientId() {
+<span class="nc" id="L22">		return patientId;</span>
+	}
+	public void setPatientId(int patientId) {
+<span class="fc" id="L25">		this.patientId = patientId;</span>
+<span class="fc" id="L26">	}</span>
+	public String getPatientName() {
+<span class="nc" id="L28">		return patientName;</span>
+	}
+	public void setPatientName(String patientName) {
+<span class="fc" id="L31">		this.patientName = patientName;</span>
+<span class="fc" id="L32">	}</span>
+	public String getPatientAddress() {
+<span class="nc" id="L34">		return patientAddress;</span>
+	}
+	public void setPatientAddress(String patientAddress) {
+<span class="fc" id="L37">		this.patientAddress = patientAddress;</span>
+<span class="fc" id="L38">	}</span>
+	public String getPatientDateOfBirth() {
+<span class="nc" id="L40">		return patientDateOfBirth;</span>
+	}
+	public void setPatientDateOfBirth(String patientDateOfBirth) {
+<span class="fc" id="L43">		this.patientDateOfBirth = patientDateOfBirth;</span>
+<span class="fc" id="L44">	}</span>
+	public String getPatientEmail() {
+<span class="nc" id="L46">		return patientEmail;</span>
+	}
+	public void setPatientEmail(String patientEmail) {
+<span class="fc" id="L49">		this.patientEmail = patientEmail;</span>
+<span class="fc" id="L50">	}</span>
+	public String getPatientContactNumber() {
+<span class="nc" id="L52">		return patientContactNumber;</span>
+	}
+	public void setPatientContactNumber(String patientContactNumber) {
+<span class="fc" id="L55">		this.patientContactNumber = patientContactNumber;</span>
+<span class="fc" id="L56">	}</span>
+	public double getPatientDrugId() {
+<span class="nc" id="L58">		return patientDrugId;</span>
+	}
+	public void setPatientDrugId(double patientDrugId) {
+<span class="fc" id="L61">		this.patientDrugId = patientDrugId;</span>
+<span class="fc" id="L62">	}</span>
+	public String getPatientDrugName() {
+<span class="nc" id="L64">		return patientDrugName;</span>
+	}
+	public void setPatientDrugName(String patientDrugName) {
+<span class="fc" id="L67">		this.patientDrugName = patientDrugName;</span>
+<span class="fc" id="L68">	}</span>
+	@Override
+	public String toString() {
+<span class="nc" id="L71">		return &quot;PatientDetailsModel [patientId=&quot; + patientId + &quot;, patientName=&quot; + patientName + &quot;, patientAddress=&quot;</span>
+<span class="nc" id="L72">				+ patientAddress + &quot;, patientDateOfBirth=&quot; + patientDateOfBirth + &quot;, patientEmail=&quot; + patientEmail</span>
+<span class="nc" id="L73">				+ &quot;, patientContactNumber=&quot; + patientContactNumber + &quot;, patientDrugId=&quot; + patientDrugId</span>
+<span class="nc" id="L74">				+ &quot;, patientDrugName=&quot; + patientDrugName + &quot;]&quot;;</span>
+	}
+	public PatientDetailsModel() {
+<span class="fc" id="L77">		super();</span>
+		// TODO Auto-generated constructor stub
+<span class="fc" id="L79">	}</span>
+	public PatientDetailsModel(int patientId, String patientName, String patientAddress, String patientDateOfBirth,
+			String patientEmail, String patientContactNumber, double patientDrugId, String patientDrugName) {
+<span class="fc" id="L82">		super();</span>
+<span class="fc" id="L83">		this.patientId = patientId;</span>
+<span class="fc" id="L84">		this.patientName = patientName;</span>
+<span class="fc" id="L85">		this.patientAddress = patientAddress;</span>
+<span class="fc" id="L86">		this.patientDateOfBirth = patientDateOfBirth;</span>
+<span class="fc" id="L87">		this.patientEmail = patientEmail;</span>
+<span class="fc" id="L88">		this.patientContactNumber = patientContactNumber;</span>
+<span class="fc" id="L89">		this.patientDrugId = patientDrugId;</span>
+<span class="fc" id="L90">		this.patientDrugName = patientDrugName;</span>
+<span class="fc" id="L91">	}</span>
+	
+	
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

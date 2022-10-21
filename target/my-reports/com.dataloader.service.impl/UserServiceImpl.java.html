@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-jwt</a> &gt; <a href="index.source.html" class="el_package">com.dataloader.service.impl</a> &gt; <span class="el_source">UserServiceImpl.java</span></div><h1>UserServiceImpl.java</h1><pre class="source lang-java linenums">package com.dataloader.service.impl;
+
+import java.util.Date;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.dataloader.model.UserModel;
+import com.dataloader.repository.UserRepository;
+import com.dataloader.service.UserService;
+
+import io.jsonwebtoken.Jwts;
+
+@Service
+<span class="nc" id="L17">public class UserServiceImpl implements UserService {</span>
+	@Autowired
+	UserRepository userRepository;
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	@Override
+	public String saveUser(UserModel user) {
+<span class="nc" id="L26">		user.setPassword(passwordEncoder.encode(user.getPassword()));</span>
+<span class="nc" id="L27">		user.setLoged_in(new Date());</span>
+<span class="nc" id="L28">		 UserModel userResponse=userRepository.save(user);</span>
+
+<span class="nc" id="L30">		return &quot;User Saved Successfully with id:&quot; + userResponse.getUserID();</span>
+
+	}
+
+	@Override
+	public UserModel getUserWithUserName(String userName) {
+
+<span class="nc" id="L37">		UserModel userResponse = userRepository.findByUsername(userName);</span>
+<span class="nc" id="L38">		return userResponse;</span>
+
+	}
+
+	public String generateJwtToken(String userName, String passWord) {
+<span class="nc" id="L43">		String token = Jwts.builder().claim(userName, userName).claim(passWord, passWord).setSubject(userName)</span>
+<span class="nc" id="L44">				.setId(UUID.randomUUID().toString()).setIssuedAt(new Date(System.currentTimeMillis())).compact();</span>
+<span class="nc" id="L45">		System.out.println(token);</span>
+<span class="nc" id="L46">		return token;</span>
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

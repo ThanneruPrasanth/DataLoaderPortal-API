@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-jwt</a> &gt; <a href="index.source.html" class="el_package">com.dataloader.common</a> &gt; <span class="el_source">UserDTO.java</span></div><h1>UserDTO.java</h1><pre class="source lang-java linenums">package com.dataloader.common;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+import org.springframework.lang.NonNull;
+
+import com.dataloader.validations.ValidPassword;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+<span class="nc bnc" id="L15" title="All 22 branches missed.">@Data</span>
+<span class="nc bnc" id="L16" title="All 4 branches missed.">@AllArgsConstructor</span>
+<span class="nc" id="L17">@NoArgsConstructor</span>
+<span class="nc bnc" id="L18" title="All 4 branches missed.">@Setter</span>
+<span class="nc" id="L19">@Getter</span>
+public class UserDTO {
+	
+	@NonNull
+    @Email
+    @NotBlank(message = &quot;username is mandatory&quot;)
+   	private String username;
+	
+	@ValidPassword
+    @NonNull
+    @NotBlank(message = &quot;password is mandatory&quot;)
+    private String password;
+
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

@@ -1,0 +1,2 @@
+patientId,patientName,patientAddress,patientDateOfBirth,patientEmail,patientContactNumber,patientDrugId,patientDrugName
+5,prasanth,tpt,20-05-1996,xyz@gmail.com,12345678,99.2,mydrug
